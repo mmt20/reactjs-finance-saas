@@ -44,6 +44,16 @@
 
   /* Radius */
   --radius: 0.5rem;
+
+  /* Button Colors - Light Mode */
+  --btn-dark: #1f1f1f;
+  --btn-dark-text: #fbfbfb;
+  --btn-dark-border: #1f1f1f;
+  --btn-light: #f6f6f6;
+  --btn-light-text: #1d1c20;
+  --btn-light-border: #d0d0d0;
+  --btn-accent: #a3dc2f;
+  --btn-accent-text: #1d1c20;
 }
 
 .dark {
@@ -54,7 +64,7 @@
   --card-foreground: #fcfcfc;
 
   --primary: #1d1c20;
-  --primary-bran: #a3dc2f;
+  --primary-brand: #a3dc2f;
   --primary-foreground: #faffe5;
 
   --secondary: #444444;
@@ -78,6 +88,16 @@
   --gray-3: #828282;
   --gray-4: #bdbdbd;
   --gray-6: #f2f2f2;
+
+  /* Button Colors - Dark Mode */
+  --btn-dark: #1f1f1f;
+  --btn-dark-text: #fbfbfb;
+  --btn-light: #353535;
+  --btn-light-text-dark: #fcfcfc;
+  --btn-light-border-dark: #707070;
+  --btn-light-border-light: #d0d0d0;
+  --btn-accent: #a3dc2f;
+  --btn-accent-text: #1d1c20;
 }
 
 @theme inline {
@@ -127,6 +147,16 @@
   --color-sidebar-accent-foreground: var(--foreground);
   --color-sidebar-border: var(--border);
   --color-sidebar-ring: var(--ring);
+
+  /* Button Colors */
+  --color-btn-dark: var(--btn-dark);
+  --color-btn-dark-text: var(--btn-dark-text);
+  --color-btn-light: var(--btn-light);
+  --color-btn-light-text-dark: var(--btn-light-text-dark);
+  --color-btn-light-border-dark: var(--btn-light-border-dark);
+  --color-btn-light-border-light: var(--btn-light-border-light);
+  --color-btn-accent: var(--btn-accent);
+  --color-btn-accent-text: var(--btn-accent-text);
 }
 
 @layer base {
