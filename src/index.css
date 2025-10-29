@@ -5,7 +5,7 @@
 
 :root {
   /* Base */
-  --background: #f6f6f6;
+  --background: #ffffff;
   --foreground: #242424;
 
   /* Card */
@@ -13,10 +13,9 @@
   --card-foreground: #242424;
 
   /* Primary */
-  --primary: #ffffff;
-  --primary-bran: #a3dc2f;
+  --primary: #1d1c20;
+  --primary-brand: #a3dc2f;
   --primary-foreground: #faffe5;
-
   /* Secondary */
   --secondary: #f6f6f6;
   --secondary-foreground: #353535;
@@ -63,7 +62,7 @@
   --card: #353535;
   --card-foreground: #fcfcfc;
 
-  --primary: #1d1c20;
+  --primary: #ffffff;
   --primary-brand: #a3dc2f;
   --primary-foreground: #faffe5;
 
@@ -108,7 +107,7 @@
   --color-card-foreground: var(--card-foreground);
 
   --color-primary: var(--primary);
-  --color-primary-brand: var(--primary-bran);
+  --color-primary-brand: var(--primary-brand);
   --color-primary-foreground: var(--primary-foreground);
 
   --color-secondary: var(--secondary);
@@ -141,7 +140,7 @@
   /* Sidebar */
   --color-sidebar: var(--card);
   --color-sidebar-foreground: var(--card-foreground);
-  --color-sidebar-primary: var(--primary-bran);
+  --color-sidebar-primary: var(--primary-brand);
   --color-sidebar-primary-foreground: var(--primary-foreground);
   --color-sidebar-accent: var(--muted);
   --color-sidebar-accent-foreground: var(--foreground);
