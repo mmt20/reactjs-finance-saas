@@ -10,7 +10,7 @@ const Header = () => {
   const navItems = ["Product", "Pages", "Integrations", "Blog", "Pricing"];
 
   return (
-    <header className="sticky top-0 z-50 bg-background backdrop-blur border-b border-border">
+    <header className="sticky top-0 z-50 dark:bg-[#0F0F0F] backdrop-blur border-b border-border ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}

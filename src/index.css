@@ -5,7 +5,7 @@
 
 :root {
   /* Base */
-  --background: #ffffff;
+  --background: #f6f6f6;
   --foreground: #242424;
 
   /* Card */
@@ -45,9 +45,9 @@
   --radius: 0.5rem;
 
   /* Button Colors - Light Mode */
-  --btn-dark: #1f1f1f;
-  --btn-dark-text: #fbfbfb;
-  --btn-dark-border: #1f1f1f;
+  --btn-dark: #1d1c20;
+  --btn-dark-text: #ffffff;
+  --btn-dark-border: #1d1c20;
   --btn-light: #f6f6f6;
   --btn-light-text: #1d1c20;
   --btn-light-border: #d0d0d0;
@@ -89,8 +89,8 @@
   --gray-6: #f2f2f2;
 
   /* Button Colors - Dark Mode */
-  --btn-dark: #1f1f1f;
-  --btn-dark-text: #fbfbfb;
+  --btn-dark: #f2f2f2;
+  --btn-dark-text: #1d1c20;
   --btn-light: #353535;
   --btn-light-text-dark: #fcfcfc;
   --btn-light-border-dark: #707070;
@@ -160,7 +160,7 @@
 
 @layer base {
   * {
-    @apply box-border m-0 p-0 outline-ring/50;
+    @apply border-border m-0 p-0 outline-ring/50;
     font-family: "DM Sans", sans-serif;
   }
   body {
