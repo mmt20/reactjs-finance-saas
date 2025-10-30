@@ -1,14 +1,28 @@
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
+const NavLink = ({ href, children, className, onClick }: NavLinkProps) => {
   return (
     <Button
       asChild
       variant="ghost"
-      className="px-6 py-2 rounded-full font-medium hover:bg-accent hover:text-accent-foreground"
+      size="sm"
+      className={cn(
+        "px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-accent hover:text-accent-foreground",
+        className
+      )}
+      onClick={onClick}
     >
       <a href={href}>{children}</a>
     </Button>
   );
 };
+
 export default NavLink;

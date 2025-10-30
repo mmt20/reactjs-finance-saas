@@ -1,9 +1,11 @@
+import { ThemeProvider } from "@components/theme/theme-provider";
 import Header from "@components/Header/Header";
 import GradientNav from "@components/GradientNav/GradientNav";
-import { ThemeProvider } from "@components/theme/theme-provider";
 import Hero from "@components/Hero";
 import Dashboard from "@components/Dashboard";
-import Features from "./components/Features";
+import Features from "@components/Features";
+import Testimonials from "@components/Testimonials";
+
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="theme">
@@ -13,6 +15,7 @@ function App() {
         <Dashboard />
         <GradientNav />
         <Features />
+        <Testimonials />
       </div>
     </ThemeProvider>
   );

@@ -28,7 +28,7 @@ const EmailForm = ({ onSubmit }: EmailFormProps) => {
         className="flex-1 h-full px-5 border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-sm"
         required
       />
-      <Button variant="accent" size="lg" type="submit" className="cursor-pointer">
+      <Button variant="default" size="lg" type="submit" className="cursor-pointer">
         Book a Demo
       </Button>
     </form>

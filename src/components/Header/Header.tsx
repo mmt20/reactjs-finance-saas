@@ -39,7 +39,7 @@ const Header = () => {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Button className="md:inline-flex cursor-pointer" variant={theme ? "light" : "default"}>
+            <Button className="md:inline-flex cursor-pointer" variant={"raised-light"}>
               Get Started
             </Button>
 
