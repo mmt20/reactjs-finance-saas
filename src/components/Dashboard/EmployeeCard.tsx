@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "../ui/skeleton";
+import { Card, CardContent } from "@/components/common/ui/card";
+import { Skeleton } from "../common/ui/skeleton";
 
 const EmployeeCard = () => {
   const categories = ["Employee", "Independent Contractor", "Contracted Employee", "Stakeholders"];

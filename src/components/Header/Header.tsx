@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../common/ui/button";
 import LogoIcon from "@/assets/logo.svg?react";
 import { useTheme } from "../theme/theme-provider";
 import NavLink from "../common/NavLink";

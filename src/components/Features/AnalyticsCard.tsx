@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/common/ui/card";
 import { ArrowUp } from "lucide-react";
 import AnalyticsImage from "@assets/analytics.svg?react";
 

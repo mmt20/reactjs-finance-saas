@@ -1,5 +1,5 @@
 import BarsIcon from "@/assets/icons/BarsIcon";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../common/ui/card";
 
 interface IStatCardProps {
   title: string;

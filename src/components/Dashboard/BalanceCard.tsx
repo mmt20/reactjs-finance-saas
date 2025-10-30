@@ -1,5 +1,5 @@
-import { Button } from "../ui/button";
-import { Card } from "../ui/card";
+import { Button } from "../common/ui/button";
+import { Card } from "../common/ui/card";
 
 const BalanceCard = () => (
   <Card className="lg:col-span-3 p-4 rounded-lg border border-border bg-card">

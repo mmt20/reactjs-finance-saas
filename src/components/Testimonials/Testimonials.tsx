@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/common/ui/button";
 import { ChevronLeft, ChevronRight, MessageSquare } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import AnnouncementBadge from "../common/AnnouncementBadge ";

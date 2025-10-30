@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/common/ui/button";
 import NavLink from "../common/NavLink";
 
 const NavLinks = ["Product", "Integration", "Demo", "Pricing"];

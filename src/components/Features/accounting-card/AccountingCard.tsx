@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@components/ui/card";
+import { Card, CardContent } from "@/components/common/ui/card";
 import InvoiceList from "./InvoiceList";
 import AmountSummary from "./AmountSummary";
 

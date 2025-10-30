@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/common/ui/card";
 import AvatarStack from "../common/AvatarStack";
 import avatarOneImage from "@/assets/avatar-images/avatar-1.jpg";
 import avatarTwoImage from "@/assets/avatar-images/avatar-2.jpg";
