@@ -11,7 +11,8 @@
   /* Card */
   --card: #ffffff;
   --card-foreground: #242424;
-
+  --card2: #ffffff;
+  --card2-foreground: #242424;
   /* Primary */
   --primary: #1d1c20;
   --primary-brand: #a3dc2f;
@@ -53,6 +54,9 @@
   --btn-light-border: #d0d0d0;
   --btn-accent: #a3dc2f;
   --btn-accent-text: #1d1c20;
+
+  --circle-outer: #f4f4f4;
+  --circle-inner: #e5eadb;
 }
 
 .dark {
@@ -61,6 +65,8 @@
 
   --card: #353535;
   --card-foreground: #fcfcfc;
+  --card2: #161616;
+  --card2-foreground: #fbfbfb;
 
   --primary: #ffffff;
   --primary-brand: #a3dc2f;
@@ -97,6 +103,9 @@
   --btn-light-border-light: #d0d0d0;
   --btn-accent: #a3dc2f;
   --btn-accent-text: #1d1c20;
+
+  --circle-outer: #171717;
+  --circle-inner: #1a1a1a;
 }
 
 @theme inline {
@@ -105,6 +114,8 @@
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-card2: var(--card2);
+  --color-card2-foreground: var(--card2-foreground);
 
   --color-primary: var(--primary);
   --color-primary-brand: var(--primary-brand);
@@ -156,6 +167,9 @@
   --color-btn-light-border-light: var(--btn-light-border-light);
   --color-btn-accent: var(--btn-accent);
   --color-btn-accent-text: var(--btn-accent-text);
+
+  --color-circle-outer: var(--circle-outer);
+  --color-circle-inner: var(--circle-inner);
 }
 
 @layer base {

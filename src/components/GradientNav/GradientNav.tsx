@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import NavLink from "../common/NavLink";
 
 const NavLinks = ["Product", "Integration", "Demo", "Pricing"];
-export default function GradientNav() {
+const GradientNav = () => {
   return (
     <div className="relative flex justify-center pt-8 px-4">
       {/* Light mode gradient */}
@@ -21,4 +21,6 @@ export default function GradientNav() {
       </nav>
     </div>
   );
-}
+};
+
+export default GradientNav;

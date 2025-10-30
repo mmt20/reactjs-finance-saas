@@ -7,15 +7,15 @@ interface AvatarData {
 
 interface AvatarStackProps {
   avatars: AvatarData[];
-  reviewText: string;
+  size?: number;
 }
 
-const AvatarStack = ({ avatars, reviewText }: AvatarStackProps) => {
+const AvatarStack = ({ avatars, size = 8 }: AvatarStackProps) => {
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="flex -space-x-2">
         {avatars.map((avatar, index) => (
-          <Avatar key={index} className="w-8 h-8 border border-background rounded-full">
+          <Avatar key={index} className={`w-${size} h-${size} border border-background rounded-full`}>
             <AvatarImage
               src={avatar.src}
               alt={`User avatar ${index + 1}`}
@@ -27,7 +27,6 @@ const AvatarStack = ({ avatars, reviewText }: AvatarStackProps) => {
           </Avatar>
         ))}
       </div>
-      <p className="text-sm text-muted-foreground">{reviewText}</p>
     </div>
   );
 };

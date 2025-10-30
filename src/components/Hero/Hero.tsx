@@ -4,7 +4,7 @@ import avatarThreeImage from "@/assets/avatar-images/avatar-3.jpg";
 import avatarFourImage from "@/assets/avatar-images/avatar-4.jpg";
 import AnnouncementBadge from "./AnnouncementBadge";
 import EmailForm from "./EmailForm";
-import AvatarStack from "./AvatarStack";
+import AvatarStack from "../common/AvatarStack";
 
 const AVATARS = [
   { src: avatarOneImage, fallback: "AB" },
@@ -35,7 +35,8 @@ const Hero = () => {
 
         <EmailForm onSubmit={handleEmailSubmit} />
 
-        <AvatarStack avatars={AVATARS} reviewText="1,200+ reviews (4.9 of 5)" />
+        <AvatarStack avatars={AVATARS} />
+        <p className="text-sm text-muted-foreground mt-2">1,200+ reviews (4.9 of 5)</p>
       </div>
     </section>
   );
