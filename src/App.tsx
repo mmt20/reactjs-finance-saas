@@ -9,7 +9,7 @@ import Testimonials from "@components/Testimonials";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="theme">
-      <div className="min-h-screen bg-background transition-colors duration-300">
+      <div className="min-h-screen w-full overflow-x-hidden bg-background transition-colors duration-300">
         <Header />
         <Hero />
         <Dashboard />

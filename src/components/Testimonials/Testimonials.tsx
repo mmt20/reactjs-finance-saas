@@ -80,8 +80,11 @@ export default function Testimonials() {
     <section className="w-full bg-background py-16">
       <div className="mx-auto max-w-6xl px-4 text-center">
         <AnnouncementBadge startIcon={MessageSquare}>Testimonials</AnnouncementBadge>
-        <h2 className="mt-4 text-3xl font-bold text-foreground">What people are saying</h2>
-        <p className="mt-2 text-muted-foreground">See what our clients say about their experience with us.</p>
+        <h2 className="mt-4 text-3xl font-bold text-foreground ">What people are saying</h2>
+        <p className="mt-2 text-[18px] font-normal text-muted-foreground">
+          "Thank you for your trust in Crypt Land! We are grateful for your feedback and are committed to providing the
+          best [products/services offered]. Read what our clients have to say about their experience with us.
+        </p>
 
         <div className="mt-10 relative">
           <div
