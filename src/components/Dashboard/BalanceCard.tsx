@@ -9,7 +9,7 @@ const BalanceCard = () => (
         <p className="text-xl  ">$350.0</p>
       </div>
 
-      <Button variant="sold" className="w-full">
+      <Button variant="default" className="w-full rounded-lg">
         Transfer
       </Button>
 

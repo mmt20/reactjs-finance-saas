@@ -11,15 +11,15 @@ const Header = () => {
   const navItems = ["Product", "Pages", "Integrations", "Blog", "Pricing"];
 
   return (
-    <header className="sticky top-0 z-50 dark:bg-[#0F0F0F] backdrop-blur border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <LogoIcon />
-            <span className="font-bold text-lg">FinBiz</span>
+    <header className="sticky top-0 z-50 w-full dark:bg-[#0F0F0F] backdrop-blur border-b border-border">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-2">
+          <div className="flex items-center gap-2 shrink-0">
+            <LogoIcon className="shrink-0" />
+            <span className="font-bold text-base sm:text-lg whitespace-nowrap">FinBiz</span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-4">
             {navItems.map((item) => (
               <NavLink key={item} href={`#${item.toLowerCase()}`}>
                 {item}
@@ -27,28 +27,32 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 shrink-0">
             <Button
               variant="ghost"
-              size="sm"
+              size="icon-sm"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="w-9 px-0 cursor-pointer"
+              className="cursor-pointer shrink-0"
             >
               <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Button className="md:inline-flex cursor-pointer" variant={"raised-light"}>
+            <Button
+              className="hidden sm:inline-flex cursor-pointer shrink-0 text-xs sm:text-sm"
+              variant="raised-light"
+              size="sm"
+            >
               Get Started
             </Button>
 
             <Button
-              variant="link"
-              className="md:hidden p-2"
+              variant="ghost"
+              className="md:hidden shrink-0"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
-              size="icon"
+              size="icon-sm"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -58,7 +62,7 @@ const Header = () => {
         {mobileMenuOpen && (
           <nav className="md:hidden flex flex-col gap-2 pb-4 border-t pt-4">
             {navItems.map((item) => (
-              <NavLink key={item} href={`#${item.toLowerCase()}`}>
+              <NavLink key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)}>
                 {item}
               </NavLink>
             ))}
