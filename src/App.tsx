@@ -6,6 +6,7 @@ import Dashboard from "@components/Dashboard";
 import Features from "@components/Features";
 import Testimonials from "@components/Testimonials";
 import Pricing from "./components/Pricing/Pricing";
+import CTA from "./components/CTA/CTA";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Features />
         <Testimonials />
         <Pricing />
+        <CTA />
       </div>
     </ThemeProvider>
   );
