@@ -77,7 +77,7 @@ export default function Testimonials() {
   const isAtEnd = scrollPos >= maxScroll - 1;
 
   return (
-    <section className="w-full bg-background py-16">
+    <section className="w-full bg-background2 py-16">
       <div className="mx-auto max-w-6xl px-4 text-center">
         <AnnouncementBadge startIcon={MessageSquare}>Testimonials</AnnouncementBadge>
         <h2 className="mt-4 text-3xl font-bold text-foreground ">What people are saying</h2>

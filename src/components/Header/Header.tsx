@@ -11,17 +11,17 @@ const Header = () => {
   const navItems = ["Product", "Pages", "Integrations", "Blog", "Pricing"];
 
   return (
-    <header className="sticky top-0 z-50 w-full dark:bg-[#0F0F0F] backdrop-blur border-b border-border">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto max-w-full md:max-w-7xl">
-        <div className="relative flex h-16 items-center justify-center">
+        <div className="relative flex h-16 items-center justify-between">
           {/* Left: Logo */}
-          <div className="absolute left-4 flex items-center gap-2 shrink-0">
-            <LogoIcon className="shrink-0" />
+          <div className="flex items-center gap-2 shrink-0">
+            <LogoIcon className="shrink-0 w-8 h-8" />
             <span className="font-bold text-base sm:text-lg whitespace-nowrap">FinBiz</span>
           </div>
 
-          {/* Center: Nav links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-4">
+          {/* Center: Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <NavLink key={item} href={`#${item.toLowerCase()}`}>
                 {item}
@@ -30,7 +30,7 @@ const Header = () => {
           </nav>
 
           {/* Right: Actions */}
-          <div className="absolute right-4 flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             <Button
               variant="ghost"
               size="icon-sm"
@@ -42,14 +42,11 @@ const Header = () => {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Button
-              className="sm:inline-flex cursor-pointer shrink-0 text-xs sm:text-sm"
-              variant="raised-light"
-              size="sm"
-            >
+            <Button className="sm:inline-flex text-xs sm:text-sm" variant="raised-light" size="sm">
               Get Started
             </Button>
 
+            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               className="md:hidden shrink-0"
@@ -62,9 +59,9 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden flex flex-start flex-col gap-2 pb-4 border-t pt-4">
+          <nav className="md:hidden flex flex-col gap-2 pb-4 border-t pt-4">
             {navItems.map((item) => (
               <NavLink key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)}>
                 {item}

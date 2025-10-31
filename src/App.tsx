@@ -16,11 +16,14 @@ function App() {
         <Header />
         <Hero />
         <Dashboard />
-        <GradientNav />
-        <Features />
-        <Testimonials />
-        <Pricing />
-        <CTA />
+        <div className="bg-background2 ">
+          <GradientNav />
+          <Features />
+          <Testimonials />
+          <Pricing />
+          <CTA />
+        </div>
+
         <Footer />
       </div>
     </ThemeProvider>

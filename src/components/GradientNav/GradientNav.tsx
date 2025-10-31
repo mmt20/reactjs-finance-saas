@@ -5,12 +5,14 @@ const NavLinks = ["Product", "Integration", "Demo", "Pricing"];
 
 const GradientNav = () => {
   return (
-    <div className="relative flex justify-center pt-8 px-4">
+    <div className="relative flex justify-center pt-8 px-4 bg-background2  ">
       {/* Light mode gradient */}
-      <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] sm:h-[880px] sm:w-[880px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.29)_0%,rgb(255_255_255/0)_100%)] pointer-events-none opacity-100 dark:opacity-0 transition-opacity" />
+      {/* <div className="absolute top-1/2 left-1/2  h-[400px] w-[400px]  md:h-[500px] md:w-[500px] sm:h-[880px] sm:w-[880px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.29)_0%,rgb(255_255_255/0)_100%)] pointer-events-none opacity-100 dark:opacity-0 transition-opacity" /> */}
+      <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px]  md:h-[500px] md:w-[500px] sm:h-[880px] sm:w-[880px] max-w-[100vw] max-h-screen -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.29)_0%,rgb(255_255_255/0)_100%)] pointer-events-none opacity-100 dark:opacity-0 transition-opacity" />
 
       {/* Dark mode gradient */}
-      <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] sm:h-[880px] sm:w-[880px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.36)_0%,rgb(0_0_0/0)_100%)] pointer-events-none opacity-0 dark:opacity-100 transition-opacity" />
+      {/* <div className="absolute top-1/2 left-1/2  h-[400px] w-[400px] md:h-[500px] md:w-[500px] sm:h-[880px] sm:w-[880px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.36)_0%,rgb(0_0_0/0)_100%)] pointer-events-none opacity-0 dark:opacity-100 transition-opacity" /> */}
+      <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px]  md:h-[500px] md:w-[500px] sm:h-[880px] sm:w-[880px] max-w-[100vw] max-h-screen -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.36)_0%,rgb(0_0_0/0)_100%)] pointer-events-none opacity-0 dark:opacity-100 transition-opacity" />
 
       <nav className="relative inline-flex flex-wrap justify-center items-center gap-1 rounded-full px-2 py-2 shadow-lg border border-white/60 dark:border-border bg-white/20 backdrop-blur-[65px] max-w-full">
         {NavLinks.map((link) => (

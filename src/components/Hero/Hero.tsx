@@ -41,7 +41,7 @@ const Hero = () => {
           onSubmit={handleEmailSubmit}
           buttonVariant="default"
           buttonText="Book a Demo"
-          className="h-14 px-1 rounded-full max-w-xl mx-auto"
+          className="md:h-14 px-1 rounded-full md:max-w-xl mx-auto"
           inputClass="rounded-full"
           buttonClass="rounded-full font-medium "
         />
