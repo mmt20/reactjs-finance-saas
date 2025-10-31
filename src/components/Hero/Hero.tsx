@@ -2,10 +2,11 @@ import avatarOneImage from "@/assets/avatar-images/avatar-1.jpg";
 import avatarTwoImage from "@/assets/avatar-images/avatar-2.jpg";
 import avatarThreeImage from "@/assets/avatar-images/avatar-3.jpg";
 import avatarFourImage from "@/assets/avatar-images/avatar-4.jpg";
-import EmailForm from "./EmailForm";
+
 import AvatarStack from "../common/AvatarStack";
 import { ArrowRight } from "lucide-react";
 import AnnouncementBadge from "../common/AnnouncementBadge";
+import EmailForm from "../common/EmailForm";
 
 const AVATARS = [
   { src: avatarOneImage, fallback: "AB" },
@@ -36,8 +37,14 @@ const Hero = () => {
           Empower your finances with The leading solutions for thousands of small and medium-sized businesses
         </p>
 
-        <EmailForm onSubmit={handleEmailSubmit} />
-
+        <EmailForm
+          onSubmit={handleEmailSubmit}
+          buttonVariant="default"
+          buttonText="Book a Demo"
+          className="h-14 px-1 rounded-full max-w-xl mx-auto"
+          inputClass="rounded-full"
+          buttonClass="rounded-full font-medium "
+        />
         <AvatarStack avatars={AVATARS} />
         <p className="text-sm text-muted-foreground mt-2">1,200+ reviews (4.9 of 5)</p>
       </div>

@@ -12,7 +12,7 @@ interface AvatarStackProps {
 
 const AvatarStack = ({ avatars, size = 8 }: AvatarStackProps) => {
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col items-center gap-3 mt-6">
       <div className="flex -space-x-2">
         {avatars.map((avatar, index) => (
           <Avatar key={index} className={`w-${size} h-${size} border border-background rounded-full`}>
