@@ -42,7 +42,7 @@ const AnnouncementBadge = ({
     <Badge
       onClick={onClick}
       className={`
-        cursor-pointer border border-b-0 mb-6 px-1 py-1 gap-3
+        cursor-pointer border border-b-0 mb-6 px-1 py-1 gap-1
         ${variantStyles[variant]}
         ${className}
       `}
