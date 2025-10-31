@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface BarsIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
