@@ -11,7 +11,7 @@ const CTACard = () => {
         <h2 className="text-5xl font-bold text-card-foreground mb-6 leading-18">
           Optimise expense Management as a team
         </h2>
-        <p className="text-base text-muted-foreground leading-relaxed max-w-2xls leading-18">
+        <p className="text-base text-muted-foreground leading-18 max-w-2xls ">
           Bring harmony to team expenses with budget limits and real-time monitoring. Freedom for your staff. Peace of
           mind for you.
         </p>
