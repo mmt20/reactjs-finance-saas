@@ -2,7 +2,7 @@
 import { Button } from "@/components/common/ui/button";
 import { ChevronLeft, ChevronRight, MessageSquare } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-import AnnouncementBadge from "../common/AnnouncementBadge ";
+import AnnouncementBadge from "../common/AnnouncementBadge";
 import TestimonialCard from "./TestimonialCard";
 import tsOneImage from "@/assets/testimonials-images/ts-1.jpg";
 import tsTwoImage from "@/assets/testimonials-images/ts-2.jpg";

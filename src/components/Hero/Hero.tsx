@@ -5,7 +5,7 @@ import avatarFourImage from "@/assets/avatar-images/avatar-4.jpg";
 import EmailForm from "./EmailForm";
 import AvatarStack from "../common/AvatarStack";
 import { ArrowRight } from "lucide-react";
-import AnnouncementBadge from "../common/AnnouncementBadge ";
+import AnnouncementBadge from "../common/AnnouncementBadge";
 
 const AVATARS = [
   { src: avatarOneImage, fallback: "AB" },
