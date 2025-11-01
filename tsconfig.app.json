@@ -28,7 +28,8 @@
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
-      "@common/*": ["./src/components/common/*"]
+      "@common/*": ["./src/components/common/*"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src"]

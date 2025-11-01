@@ -13,6 +13,8 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "src/components"),
       "@lib": path.resolve(__dirname, "src/lib"),
       "@types": path.resolve(__dirname, "src/types"),
+      "@hooks": path.resolve(__dirname, "src/hooks"),
+      "@common/*": path.resolve(__dirname, "src/components/common/*"),
     },
   },
 });

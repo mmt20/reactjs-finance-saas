@@ -5,10 +5,7 @@ import type { ITestimonial } from "@/types";
 
 export default function TestimonialCard({ name, avatar, rating, text }: ITestimonial) {
   return (
-    <Card
-      className="relative shrink-0 rounded-3xl border bg-card p-6 transition-all "
-      style={{ width: 384, height: 260 }}
-    >
+    <Card className="relative shrink-0 rounded-3xl border bg-card p-6 transition-all w-[384px] h-[260px] ">
       <div className="flex flex-col h-full justify-between">
         <p className="text-base leading-relaxed text-foreground">“{text}”</p>
 
@@ -27,7 +24,9 @@ export default function TestimonialCard({ name, avatar, rating, text }: ITestimo
                   <Star
                     key={i}
                     className={`h-3.5 w-3.5 ${
-                      i < rating ? "fill-yellow-500 text-yellow-500" : "text-muted-foreground"
+                      i < rating
+                        ? "fill-yellow-500 text-yellow-500"
+                        : "fill-muted-foreground/20 text-muted-foreground/20"
                     }`}
                   />
                 ))}

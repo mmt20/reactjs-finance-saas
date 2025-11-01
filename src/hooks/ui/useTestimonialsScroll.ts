@@ -1,16 +1,13 @@
 import { useRef, useState, useEffect } from "react";
 
-const CARD_WIDTH = 384;
-const CARD_GAP = 24;
-
-export function useTestimonialsScroll(itemCount: number) {
+export function useTestimonialsScroll(itemCount: number, cardWidth = 384, cardGap = 24) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollPos, setScrollPos] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    const amount = dir === "left" ? -(CARD_WIDTH + CARD_GAP) : CARD_WIDTH + CARD_GAP;
+    const amount = dir === "left" ? -(cardWidth + cardGap) : cardWidth + cardGap;
     scrollRef.current.scrollBy({ left: amount, behavior: "smooth" });
   };
 
@@ -36,10 +33,5 @@ export function useTestimonialsScroll(itemCount: number) {
     };
   }, [itemCount]);
 
-  return {
-    scrollRef,
-    scroll,
-    isAtStart,
-    isAtEnd,
-  };
+  return { scrollRef, scroll, isAtStart, isAtEnd };
 }
