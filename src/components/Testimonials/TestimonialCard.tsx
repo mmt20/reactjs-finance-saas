@@ -21,7 +21,7 @@ export default function TestimonialCard({ name, avatar, rating, text }: ITestimo
               </AvatarFallback>
             </Avatar>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">{name}</h4>
+              <h3 className="text-sm font-semibold text-foreground">{name}</h3>
               <div className="mt-1 flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star

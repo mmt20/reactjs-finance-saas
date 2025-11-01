@@ -16,10 +16,10 @@ const CollaborationCard = () => {
   return (
     <Card className="rounded-2xl border border-border bg-card2 shadow-sm flex flex-col">
       <CardContent className="p-5 flex flex-col items-center flex-1">
-        <h2 className="font-bold text-lg">Easy collaboration</h2>
-        <h3 className="text-sm font-semibold text-card-foreground text-center mb-6">
+        <p className="font-bold text-lg">Easy collaboration</p>
+        <p className="text-sm font-semibold text-card-foreground text-center mb-6">
           Seamlessly collaborate with your team members like never before.
-        </h3>
+        </p>
         <div className="relative w-66 h-66 flex items-center justify-center  rounded-full">
           {/* Outer circle */}
           <div className="absolute w-66 h-66 rounded-full bg-circle-outer border border-border"></div>
