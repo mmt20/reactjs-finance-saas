@@ -1,6 +1,6 @@
 export type PricingPlanVariant = "outline" | "raised" | "raised-accent";
 
-export interface PricingPlan {
+export interface IPricingPlan {
   id: number;
   name: string;
   price: number;
