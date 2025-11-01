@@ -1,64 +1,19 @@
-import { Tag } from "lucide-react";
-import AnnouncementBadge from "../common/AnnouncementBadge";
+import { usePricing } from "@/hooks/usePricing";
+import { PricingSkeleton } from "./PricingSkeleton";
 import PlanCard from "./PlanCard";
-
-export interface PricingPlan {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  features: string[];
-  cta: string;
-  popular: boolean;
-  variant: "outline" | "raised" | "raised-accent";
-}
-
-const pricingPlans: PricingPlan[] = [
-  {
-    id: 1,
-    name: "Basic",
-    price: 499,
-    description: "Get a professional website designed according to your needs.",
-    features: ["Get a fully designed Website", "Web flow Development", "Limited Support"],
-    cta: "Get started",
-    popular: false,
-    variant: "outline",
-  },
-  {
-    id: 2,
-    name: "Pro",
-    price: 499,
-    description: "Get a professional website designed according to your needs.",
-    features: [
-      "Get a fully designed Website",
-      "Web flow Development",
-      "Limited Support",
-      "Standard Integrations",
-      "Email support",
-    ],
-    cta: "Get started",
-    popular: true,
-    variant: "raised",
-  },
-  {
-    id: 3,
-    name: "Enterprise",
-    price: 999,
-    description: "Get a professional website designed according to your needs.",
-    features: [
-      "Get a fully designed Website",
-      "Web flow Development",
-      "Limited Support",
-      "Standard Integrations",
-      "Email support",
-    ],
-    cta: "Contact Us",
-    popular: false,
-    variant: "raised-accent",
-  },
-];
+import AnnouncementBadge from "../common/AnnouncementBadge";
+import { Tag } from "lucide-react";
 
 export default function Pricing() {
+  const { data: plans = [], isLoading, error } = usePricing();
+
+  if (isLoading) {
+    return <PricingSkeleton />;
+  }
+  if (error) {
+    return <div>Error loading pricing plans.</div>;
+  }
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
@@ -74,7 +29,7 @@ export default function Pricing() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {pricingPlans.map((plan) => (
+          {plans.map((plan) => (
             <PlanCard key={plan.id} plan={plan} />
           ))}
         </div>

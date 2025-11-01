@@ -18,7 +18,6 @@ function App() {
   } else {
     console.log("Supabase environment variables are set.");
     console.log("VITE_SUPABASE_URL:", supabaseUrl);
-    console.log("VITE_SUPABASE_ANON_KEY:", supabaseKey);
   }
   return (
     <ThemeProvider defaultTheme="dark" storageKey="theme">
