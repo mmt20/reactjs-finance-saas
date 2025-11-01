@@ -10,6 +10,16 @@ import CTA from "@components/CTA/CTA";
 import Footer from "@components/Footer/Footer";
 
 function App() {
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error("Missing Supabase environment variables");
+  } else {
+    console.log("Supabase environment variables are set.");
+    console.log("VITE_SUPABASE_URL:", supabaseUrl);
+    console.log("VITE_SUPABASE_ANON_KEY:", supabaseKey);
+  }
   return (
     <ThemeProvider defaultTheme="dark" storageKey="theme">
       <div className="min-h-screen w-full  bg-background transition-colors duration-300">
