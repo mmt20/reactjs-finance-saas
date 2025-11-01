@@ -4,7 +4,7 @@ import { Card, CardContent } from "../common/ui/card";
 
 export default function CTA() {
   return (
-    <section className="py-16 bg-background" aria-labelledby="cta-heading" role="region">
+    <section className="py-16 bg-background" aria-labelledby="cta-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <Card className="overflow-hidden border-0 p-0 bg-card2 shadow-sm">
