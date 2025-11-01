@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@components/theme/theme-provider";
 import { lazy, Suspense } from "react";
-import ErrorBoundary from "@components/ErrorBoundary";
+import ErrorBoundary from "@components/common/ErrorBoundary";
 import Header from "@components/Header/Header";
 import Hero from "@components/Hero";
 import SectionFallback from "@/components/common/SectionFallback";
@@ -17,7 +17,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark" storageKey="theme">
-        <div className="flex flex-col items-center min-h-screen w-full  bg-background transition-colors duration-300">
+        <div className="flex flex-col items-center min-h-screen w-full bg-background transition-colors duration-300">
           <Header />
           <Hero />
 
@@ -27,23 +27,14 @@ function App() {
 
           <div className="bg-background2 w-full pt-10">
             <GradientNav />
-
             <Suspense fallback={<SectionFallback />}>
               <Features />
-            </Suspense>
-
-            <Suspense fallback={<SectionFallback />}>
               <Testimonials />
-            </Suspense>
-
-            <Suspense fallback={<SectionFallback />}>
               <Pricing />
-            </Suspense>
-
-            <Suspense fallback={<SectionFallback />}>
               <CTA />
             </Suspense>
           </div>
+
           <Suspense fallback={<SectionFallback />}>
             <Footer />
           </Suspense>
