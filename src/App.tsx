@@ -14,11 +14,11 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark" storageKey="theme">
-        <div className="min-h-screen w-full  bg-background transition-colors duration-300">
+        <div className="flex flex-col items-center min-h-screen w-full  bg-background transition-colors duration-300">
           <Header />
           <Hero />
           <Dashboard />
-          <div className="bg-background2 ">
+          <div className="bg-background2 w-full pt-10">
             <GradientNav />
             <Features />
             <Testimonials />

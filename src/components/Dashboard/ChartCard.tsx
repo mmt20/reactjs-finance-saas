@@ -1,13 +1,15 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/common/ui/card";
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import { Line, XAxis, YAxis, ResponsiveContainer, Area, AreaChart } from "recharts";
 
 const generateChartData = () => {
   const hours = [];
   for (let i = 0; i <= 24; i++) {
     const hour = i === 24 ? 0 : i;
-    const time = `${hour.toString().padStart(2, "0")}:00AM`;
-    const value = 4000 + Math.sin(i * 0.5) * 1500 + Math.cos(i * 0.3) * 800;
-    hours.push({ time, value });
+    const period = hour >= 12 ? "PM" : "AM";
+    const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
+    const time = `${displayHour.toString().padStart(2, "0")}:00${period}`;
+    const value = 4500 + Math.sin(i * 0.6 - 1) * 1200 + Math.cos(i * 0.4) * 600 + Math.sin(i * 0.2) * 300;
+    hours.push({ time, value: Math.max(2000, Math.min(6500, value)) });
   }
   return hours;
 };
@@ -30,7 +32,13 @@ const ChartCard = () => {
       </CardHeader>
       <CardContent className="p-0">
         <ResponsiveContainer width="100%" height={200}>
-          <LineChart data={data}>
+          <AreaChart data={data}>
+            <defs>
+              <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#10b981" stopOpacity={0.3} />
+                <stop offset="100%" stopColor="#10b981" stopOpacity={0} />
+              </linearGradient>
+            </defs>
             <XAxis
               dataKey="time"
               stroke="#666"
@@ -45,7 +53,7 @@ const ChartCard = () => {
               tickLine={false}
               domain={[1000, 7000]}
             />
-
+            <Area type="monotone" dataKey="value" stroke="none" fill="url(#colorGradient)" />
             <Line
               type="monotone"
               dataKey="value"
@@ -54,7 +62,7 @@ const ChartCard = () => {
               dot={false}
               activeDot={{ r: 6, fill: "#10b981" }}
             />
-          </LineChart>
+          </AreaChart>
         </ResponsiveContainer>
       </CardContent>
     </Card>

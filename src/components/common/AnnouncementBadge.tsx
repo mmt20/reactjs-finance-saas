@@ -54,7 +54,7 @@ const AnnouncementBadge = ({
       {label && <span className={`${labelStyles[variant]} rounded-full px-3 py-1 text-sm font-semibold`}>{label}</span>}
 
       {/* Main Content */}
-      <span className="flex-1 text-primary dark:text-primary-brand">{children}</span>
+      <span className="flex-1">{children}</span>
 
       {/* End Icon */}
       {EndIcon && <EndIcon className={`w-${iconSize} h-${iconSize} shrink-0`} />}

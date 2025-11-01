@@ -6,7 +6,7 @@ import type { ITestimonial } from "@/types";
 export default function TestimonialCard({ name, avatar, rating, text }: ITestimonial) {
   return (
     <Card
-      className="relative shrink-0 rounded-3xl border bg-card p-6 transition-all"
+      className="relative shrink-0 rounded-3xl border bg-card p-6 transition-all "
       style={{ width: 384, height: 260 }}
     >
       <div className="flex flex-col h-full justify-between">

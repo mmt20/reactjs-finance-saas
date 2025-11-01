@@ -35,7 +35,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t dark:bg-card2 bg-[#E0E0E0] border-border mt-12">
+    <footer className="border-t  w-full dark:bg-card2 bg-[#E0E0E0] border-border mt-12">
       <div className="flex justify-center">
         <div className="w-full max-w-7xl px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">

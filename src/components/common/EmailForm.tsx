@@ -52,6 +52,7 @@ const EmailForm = ({
         "relative flex items-center justify-between",
         "border border-input bg-card text-foreground",
         "transition-all duration-200",
+        "w-full max-w-full",
         className
       )}
     >
@@ -61,11 +62,13 @@ const EmailForm = ({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className={cn(
-          "flex-1 h-full px-5 border-0 bg-transparent text-foreground",
-          "placeholder:text-muted-foreground/70",
+          "flex-1 h-full px-3 sm:px-4 md:px-5 border-0 bg-transparent text-foreground",
+          "text-xs sm:text-sm md:text-base",
+          "placeholder:text-muted-foreground/70 placeholder:text-xs sm:placeholder:text-sm",
           "focus:outline-none focus-visible:outline-none",
           "transition-all duration-200",
           "disabled:opacity-50 disabled:cursor-not-allowed",
+          "min-w-0",
           inputClass
         )}
         required
@@ -78,6 +81,10 @@ const EmailForm = ({
         className={cn(
           "cursor-pointer transition-all duration-200",
           "disabled:opacity-60 disabled:cursor-not-allowed",
+          "text-xs sm:text-sm md:text-base",
+          "px-3 sm:px-4 md:px-6",
+          "py-2 sm:py-2.5 md:py-3",
+          "whitespace-nowrap shrink-0",
           buttonClass
         )}
         aria-label={buttonText}
