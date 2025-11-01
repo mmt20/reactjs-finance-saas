@@ -1,14 +1,17 @@
 import { ThemeProvider } from "@components/theme/theme-provider";
+import { lazy, Suspense } from "react";
+import ErrorBoundary from "@components/ErrorBoundary";
 import Header from "@components/Header/Header";
-import GradientNav from "@components/GradientNav/GradientNav";
 import Hero from "@components/Hero";
-import Dashboard from "@components/Dashboard";
-import Features from "@components/Features";
-import Testimonials from "@components/Testimonials";
-import Pricing from "@components/Pricing";
-import CTA from "@components/CTA/CTA";
-import Footer from "@components/Footer/Footer";
-import ErrorBoundary from "./components/ErrorBoundary";
+import SectionLoader from "@components/common/SectionLoader";
+import GradientNav from "./components/GradientNav/GradientNav";
+
+const Features = lazy(() => import("@components/Features"));
+const Dashboard = lazy(() => import("@components/Dashboard"));
+const Pricing = lazy(() => import("@components/Pricing"));
+const Testimonials = lazy(() => import("@components/Testimonials"));
+const CTA = lazy(() => import("@components/CTA/CTA"));
+const Footer = lazy(() => import("@components/Footer/Footer"));
 
 function App() {
   return (
@@ -17,15 +20,33 @@ function App() {
         <div className="flex flex-col items-center min-h-screen w-full  bg-background transition-colors duration-300">
           <Header />
           <Hero />
-          <Dashboard />
+
+          <Suspense fallback={<SectionLoader />}>
+            <Dashboard />
+          </Suspense>
+
           <div className="bg-background2 w-full pt-10">
             <GradientNav />
-            <Features />
-            <Testimonials />
-            <Pricing />
-            <CTA />
+
+            <Suspense fallback={<SectionLoader />}>
+              <Features />
+            </Suspense>
+
+            <Suspense fallback={<SectionLoader />}>
+              <Testimonials />
+            </Suspense>
+
+            <Suspense fallback={<SectionLoader />}>
+              <Pricing />
+            </Suspense>
+
+            <Suspense fallback={<SectionLoader />}>
+              <CTA />
+            </Suspense>
           </div>
-          <Footer />
+          <Suspense fallback={<SectionLoader />}>
+            <Footer />
+          </Suspense>
         </div>
       </ThemeProvider>
     </ErrorBoundary>
