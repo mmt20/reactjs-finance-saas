@@ -5,7 +5,7 @@ import Hero from "@components/Hero";
 import Dashboard from "@components/Dashboard";
 import Features from "@components/Features";
 import Testimonials from "@components/Testimonials";
-import Pricing from "@components/Pricing/Pricing";
+import Pricing from "@components/Pricing";
 import CTA from "@components/CTA/CTA";
 import Footer from "@components/Footer/Footer";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -34,7 +34,6 @@ function App() {
             <Pricing />
             <CTA />
           </div>
-
           <Footer />
         </div>
       </ThemeProvider>
