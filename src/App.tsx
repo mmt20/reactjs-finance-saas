@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import ErrorBoundary from "@components/ErrorBoundary";
 import Header from "@components/Header/Header";
 import Hero from "@components/Hero";
-import SectionLoader from "@components/common/SectionLoader";
+import SectionFallback from "@/components/common/SectionFallback";
 import GradientNav from "./components/GradientNav/GradientNav";
 
 const Features = lazy(() => import("@components/Features"));
@@ -21,30 +21,30 @@ function App() {
           <Header />
           <Hero />
 
-          <Suspense fallback={<SectionLoader />}>
+          <Suspense fallback={<SectionFallback />}>
             <Dashboard />
           </Suspense>
 
           <div className="bg-background2 w-full pt-10">
             <GradientNav />
 
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<SectionFallback />}>
               <Features />
             </Suspense>
 
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<SectionFallback />}>
               <Testimonials />
             </Suspense>
 
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<SectionFallback />}>
               <Pricing />
             </Suspense>
 
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<SectionFallback />}>
               <CTA />
             </Suspense>
           </div>
-          <Suspense fallback={<SectionLoader />}>
+          <Suspense fallback={<SectionFallback />}>
             <Footer />
           </Suspense>
         </div>
