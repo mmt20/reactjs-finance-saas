@@ -1,5 +1,5 @@
 import BalanceCard from "./BalanceCard.tsx";
-import ChartCard from "./ChartCard.tsx";
+import ChartCard from "./chart/ChartCard.tsx";
 import EmployeeCard from "./EmployeeCard.tsx";
 import StatsList from "./StatsList.tsx";
 
