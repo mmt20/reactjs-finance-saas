@@ -8,6 +8,7 @@ import Testimonials from "@components/Testimonials";
 import Pricing from "@components/Pricing/Pricing";
 import CTA from "@components/CTA/CTA";
 import Footer from "@components/Footer/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
@@ -20,22 +21,24 @@ function App() {
     console.log("VITE_SUPABASE_URL:", supabaseUrl);
   }
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="theme">
-      <div className="min-h-screen w-full  bg-background transition-colors duration-300">
-        <Header />
-        <Hero />
-        <Dashboard />
-        <div className="bg-background2 ">
-          <GradientNav />
-          <Features />
-          <Testimonials />
-          <Pricing />
-          <CTA />
-        </div>
+    <ErrorBoundary>
+      <ThemeProvider defaultTheme="dark" storageKey="theme">
+        <div className="min-h-screen w-full  bg-background transition-colors duration-300">
+          <Header />
+          <Hero />
+          <Dashboard />
+          <div className="bg-background2 ">
+            <GradientNav />
+            <Features />
+            <Testimonials />
+            <Pricing />
+            <CTA />
+          </div>
 
-        <Footer />
-      </div>
-    </ThemeProvider>
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
