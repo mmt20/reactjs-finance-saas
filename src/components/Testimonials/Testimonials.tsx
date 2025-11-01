@@ -45,6 +45,7 @@ const Testimonials = () => {
                 className="rounded-full p-6 cursor-pointer"
                 onClick={() => scroll("left")}
                 disabled={isAtStart}
+                aria-label="Scroll left"
               >
                 <ChevronLeft />
               </Button>
@@ -54,6 +55,7 @@ const Testimonials = () => {
                 className="cursor-pointer p-6"
                 onClick={() => scroll("right")}
                 disabled={isAtEnd}
+                aria-label="Scroll right"
               >
                 <ChevronRight />
               </Button>

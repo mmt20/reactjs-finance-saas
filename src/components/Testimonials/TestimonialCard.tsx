@@ -15,7 +15,7 @@ export default function TestimonialCard({ name, avatar, rating, text }: ITestimo
         <div className="flex items-center justify-between mt-6">
           <div className="flex items-center gap-3">
             <Avatar className="h-12 w-12 border border-background rounded-full">
-              <AvatarImage src={avatar} />
+              <AvatarImage src={avatar} alt={`avatar of ${name}`} />
               <AvatarFallback className="bg-muted text-sm font-medium text-foreground">
                 {name.slice(0, 2).toUpperCase()}
               </AvatarFallback>
