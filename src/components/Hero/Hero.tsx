@@ -21,7 +21,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24 bg-background">
+    <section className="container mx-auto px-4 py-16  bg-background">
       <div className="text-center max-w-4xl mx-auto">
         <AnnouncementBadge label="New" endIcon={ArrowRight}>
           Introducing AI Automation

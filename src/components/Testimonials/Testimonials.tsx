@@ -1,45 +1,16 @@
-import { Button } from "@/components/common/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
-import TestimonialCard from "./TestimonialCard";
-import { useTestimonials } from "@/hooks/useTestimonials";
+
+import { Button } from "@/components/common/ui/button";
 import TestimonialsHeader from "./TestimonialsHeader";
+import TestimonialCard from "./TestimonialCard";
 import TestimonialsSkeleton from "./TestimonialsSkeleton";
 
-const CARD_WIDTH = 384;
-const CARD_GAP = 24;
+import { useTestimonials } from "@/hooks/queries/useTestimonials";
+import { useTestimonialsScroll } from "@/hooks/ui/useTestimonialsScroll";
 
-export default function Testimonials() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollPos, setScrollPos] = useState(0);
-  const [maxScroll, setMaxScroll] = useState(0);
-  const scroll = (dir: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const amount = dir === "left" ? -(CARD_WIDTH + CARD_GAP) : CARD_WIDTH + CARD_GAP;
-    scrollRef.current.scrollBy({ left: amount, behavior: "smooth" });
-  };
-
-  const isAtStart = scrollPos <= 1;
-  const isAtEnd = scrollPos >= maxScroll - 1;
+const Testimonials = () => {
   const { data: testimonials = [], isLoading, error } = useTestimonials();
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const updateScrollInfo = () => {
-      setScrollPos(el.scrollLeft);
-      setMaxScroll(el.scrollWidth - el.clientWidth);
-    };
-
-    updateScrollInfo();
-    el.addEventListener("scroll", updateScrollInfo);
-    window.addEventListener("resize", updateScrollInfo);
-
-    return () => {
-      el.removeEventListener("scroll", updateScrollInfo);
-      window.removeEventListener("resize", updateScrollInfo);
-    };
-  }, [testimonials]);
+  const { scrollRef, scroll, isAtStart, isAtEnd } = useTestimonialsScroll(testimonials.length);
 
   if (error) throw error;
 
@@ -92,4 +63,6 @@ export default function Testimonials() {
       </div>
     </section>
   );
-}
+};
+
+export default Testimonials;

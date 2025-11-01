@@ -1,4 +1,4 @@
-import { usePricing } from "@/hooks/usePricing";
+import { usePricing } from "@/hooks/queries/usePricing";
 import { PricingSkeleton } from "./PricingSkeleton";
 import PlanCard from "./PlanCard";
 import AnnouncementBadge from "../common/AnnouncementBadge";
