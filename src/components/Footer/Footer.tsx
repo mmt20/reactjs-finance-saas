@@ -21,10 +21,10 @@ const helpLinks = [
 ];
 
 const socialLinks = [
-  { href: "#", Icon: TwitterIcon, hoverColor: "hover:bg-[#1DA1F2]" },
-  { href: "#", Icon: FacebookIcon, hoverColor: "hover:bg-[#1877F2]" },
-  { href: "#", Icon: InstagramIcon, hoverColor: "hover:bg-[#E4405F]" },
-  { href: "#", Icon: GithubIcon, hoverColor: "hover:bg-[#333]" },
+  { href: "#", Icon: TwitterIcon, hoverColor: "hover:bg-[#1DA1F2]", label: "Twitter" },
+  { href: "#", Icon: FacebookIcon, hoverColor: "hover:bg-[#1877F2]", label: "Facebook" },
+  { href: "#", Icon: InstagramIcon, hoverColor: "hover:bg-[#E4405F]", label: "Instagram" },
+  { href: "#", Icon: GithubIcon, hoverColor: "hover:bg-[#333]", label: "Github" },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -49,8 +49,8 @@ const Footer = () => {
                 Upgrade your finances with our smart and new-generation business.
               </p>
               <div className="flex gap-3">
-                {socialLinks.map(({ href, Icon, hoverColor }, i) => (
-                  <SocialLink key={i} href={href} Icon={Icon} hoverColor={hoverColor} />
+                {socialLinks.map(({ href, Icon, hoverColor, label }, i) => (
+                  <SocialLink key={i} href={href} Icon={Icon} label={label} hoverColor={hoverColor} />
                 ))}
               </div>
             </div>
