@@ -2,9 +2,9 @@ import { Button } from "../common/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/common/ui/card";
 import PopularBadge from "./PopularBadge";
 import FeatureItem from "./FeatureItem";
-import type { PricingPlan } from "./Pricing";
+import type { IPricingPlan } from "@/types";
 
-const PlanCard = ({ plan }: { plan: PricingPlan }) => {
+const PlanCard = ({ plan }: { plan: IPricingPlan }) => {
   return (
     <Card className="relative rounded-3xl border transition-all bg-card text-card-foreground hover:shadow-lg hover:border-border/60 flex flex-col">
       {plan.popular && <PopularBadge />}

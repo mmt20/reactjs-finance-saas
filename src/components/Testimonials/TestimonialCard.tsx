@@ -1,19 +1,12 @@
 import { Card } from "@/components/common/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/common/ui/avatar";
 import { Star, Quote } from "lucide-react";
+import type { ITestimonial } from "@/types";
 
-interface Props {
-  id?: number;
-  name: string;
-  avatar?: string;
-  rating: number;
-  text: string;
-}
-
-export default function TestimonialCard({ name, avatar, rating, text }: Props) {
+export default function TestimonialCard({ name, avatar, rating, text }: ITestimonial) {
   return (
     <Card
-      className="relative shrink-0 rounded-3xl border  bg-card p-6  transition-all"
+      className="relative shrink-0 rounded-3xl border bg-card p-6 transition-all"
       style={{ width: 384, height: 260 }}
     >
       <div className="flex flex-col h-full justify-between">
@@ -30,14 +23,19 @@ export default function TestimonialCard({ name, avatar, rating, text }: Props) {
             <div>
               <h4 className="text-sm font-semibold text-foreground">{name}</h4>
               <div className="mt-1 flex gap-0.5">
-                {Array.from({ length: rating }).map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`h-3.5 w-3.5 ${
+                      i < rating ? "fill-yellow-500 text-yellow-500" : "text-muted-foreground"
+                    }`}
+                  />
                 ))}
               </div>
             </div>
           </div>
 
-          <Quote className="h-10 w-10 text-muted-foreground/20" />
+          <Quote className="h-10 w-10 fill-accent  text-muted-foreground/20" />
         </div>
       </div>
     </Card>

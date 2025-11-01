@@ -1,8 +1,8 @@
 import { supabase } from "@/lib/supabase/client";
-import type { PricingPlan } from "@/types";
+import type { IPricingPlan } from "@/types";
 
 export const pricingServices = {
-  getAll: async (): Promise<PricingPlan[]> => {
+  getAll: async (): Promise<IPricingPlan[]> => {
     try {
       const { data, error } = await supabase
         .from("pricing_plans")

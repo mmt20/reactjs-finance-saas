@@ -1,1 +1,2 @@
-export type { PricingPlan, PricingPlanVariant } from "./pricingTypes";
+export type { IPricingPlan, PricingPlanVariant } from "./pricingTypes";
+export type { ITestimonial } from "./testimonialTypes";
