@@ -1,7 +1,8 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/common/ui/card";
-import { useMemo, useState } from "react";
+import { useMemo, useState, lazy, Suspense } from "react";
 import { generateChartData } from "@/lib/charts/chartUtils";
-import SpendChart from "./SpendChart";
+
+const SpendChart = lazy(() => import("./SpendChart"));
 
 type TimeFrame = "Daily" | "Weekly" | "Monthly" | "Yearly";
 
@@ -32,7 +33,9 @@ const ChartCard = () => {
         </div>
       </CardHeader>
       <CardContent className="p-0">
-        <SpendChart data={data} />
+        <Suspense fallback={<div className="h-[200px] animate-pulse bg-muted rounded" />}>
+          <SpendChart data={data} />
+        </Suspense>
       </CardContent>
     </Card>
   );
