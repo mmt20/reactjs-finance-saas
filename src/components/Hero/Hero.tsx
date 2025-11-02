@@ -21,32 +21,35 @@ const Hero = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 py-16  bg-background">
-      <div className="text-center max-w-4xl mx-auto">
+    <section className="bg-background container mx-auto px-4 py-16">
+      <div className="mx-auto max-w-4xl text-center">
         <AnnouncementBadge label="New" endIcon={ArrowRight}>
           Introducing AI Automation
         </AnnouncementBadge>
 
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-foreground">
+        <h1 className="text-foreground mb-6 text-4xl leading-tight font-bold md:text-6xl">
           The Finance Solutions
           <br />
           For Your Business
         </h1>
 
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Empower your finances with The leading solutions for thousands of small and medium-sized businesses
+        <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
+          Empower your finances with The leading solutions for thousands of
+          small and medium-sized businesses
         </p>
 
         <EmailForm
           onSubmit={handleEmailSubmit}
           buttonVariant="default"
           buttonText="Book a Demo"
-          className="md:h-14 px-1 rounded-full md:max-w-xl mx-auto"
+          className="mx-auto rounded-full px-1 md:h-14 md:max-w-xl"
           inputClass="rounded-full"
           buttonClass="rounded-full font-medium "
         />
         <AvatarStack avatars={AVATARS} />
-        <p className="text-sm text-muted-foreground mt-2">1,200+ reviews (4.9 of 5)</p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          1,200+ reviews (4.9 of 5)
+        </p>
       </div>
     </section>
   );

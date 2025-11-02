@@ -1,24 +1,37 @@
 import { Card } from "@/components/common/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/common/ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/common/ui/avatar";
 import { Star, Quote } from "lucide-react";
 import type { ITestimonial } from "@/types";
 
-export default function TestimonialCard({ name, avatar, rating, text }: ITestimonial) {
+export default function TestimonialCard({
+  name,
+  avatar,
+  rating,
+  text,
+}: ITestimonial) {
   return (
-    <Card className="relative shrink-0 rounded-3xl border bg-card p-4 sm:p-6 transition-all w-full h-[220px] sm:h-[260px] ">
-      <div className="flex flex-col h-full justify-between">
-        <p className="text-sm sm:text-base leading-relaxed text-foreground">“{text}”</p>
+    <Card className="bg-card relative h-[220px] w-full shrink-0 rounded-3xl border p-4 transition-all sm:h-[260px] sm:p-6">
+      <div className="flex h-full flex-col justify-between">
+        <p className="text-foreground text-sm leading-relaxed sm:text-base">
+          “{text}”
+        </p>
 
-        <div className="flex items-center justify-between mt-6">
+        <div className="mt-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Avatar className="h-10 w-10 sm:h-12 sm:w-12 border border-background rounded-full">
+            <Avatar className="border-background h-10 w-10 rounded-full border sm:h-12 sm:w-12">
               <AvatarImage src={avatar} alt={`avatar of ${name}`} />
-              <AvatarFallback className="bg-muted text-sm font-medium text-foreground">
+              <AvatarFallback className="bg-muted text-foreground text-sm font-medium">
                 {name.slice(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="text-xs sm:text-sm font-semibold text-foreground">{name}</h3>
+              <h3 className="text-foreground text-xs font-semibold sm:text-sm">
+                {name}
+              </h3>
               <div className="mt-1 flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
@@ -34,7 +47,7 @@ export default function TestimonialCard({ name, avatar, rating, text }: ITestimo
             </div>
           </div>
 
-          <Quote className="h-8 w-8 sm:h-10 sm:w-10 fill-accent text-muted-foreground/20" />
+          <Quote className="fill-accent text-muted-foreground/20 h-8 w-8 sm:h-10 sm:w-10" />
         </div>
       </div>
     </Card>

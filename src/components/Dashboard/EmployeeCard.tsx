@@ -2,17 +2,22 @@ import { Card, CardContent } from "@/components/common/ui/card";
 import { Skeleton } from "../common/ui/skeleton";
 
 const EmployeeCard = () => {
-  const categories = ["Employee", "Independent Contractor", "Contracted Employee", "Stakeholders"];
+  const categories = [
+    "Employee",
+    "Independent Contractor",
+    "Contracted Employee",
+    "Stakeholders",
+  ];
 
   return (
-    <Card className="lg:col-span-3  p-4 rounded-lg border border-border bg-card ">
-      <CardContent className="p-0 space-y-8">
+    <Card className="border-border bg-card rounded-lg border p-4 lg:col-span-3">
+      <CardContent className="space-y-8 p-0">
         {categories.map((category) => (
           <div key={category}>
             <div className="flex flex-col space-y-2">
-              <span className="text-xs text-foreground ">{category}</span>
+              <span className="text-foreground text-xs">{category}</span>
               <div>
-                <Skeleton className="h-2 w-[60%] rounded-full mb-1" />
+                <Skeleton className="mb-1 h-2 w-[60%] rounded-full" />
                 <Skeleton className="h-2 w-full rounded-full opacity-50" />
               </div>
             </div>

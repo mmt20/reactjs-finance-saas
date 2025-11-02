@@ -1,6 +1,12 @@
-const FooterColumn = ({ title, children }: { title: string; children: React.ReactNode }) => (
+const FooterColumn = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
   <div>
-    <h3 className="font-semibold mb-4 text-foreground">{title}</h3>
+    <h3 className="text-foreground mb-4 font-semibold">{title}</h3>
     {children}
   </div>
 );

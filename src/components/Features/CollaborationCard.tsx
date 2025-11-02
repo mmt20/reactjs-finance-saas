@@ -14,19 +14,19 @@ const AVATARS = [
 
 const CollaborationCard = () => {
   return (
-    <Card className="rounded-2xl border border-border bg-card2 shadow-sm flex flex-col">
-      <CardContent className="p-5 flex flex-col items-center flex-1">
-        <p className="font-bold text-lg">Easy collaboration</p>
-        <p className="text-sm font-semibold text-card-foreground text-center mb-6">
+    <Card className="border-border bg-card2 flex flex-col rounded-2xl border shadow-sm">
+      <CardContent className="flex flex-1 flex-col items-center p-5">
+        <p className="text-lg font-bold">Easy collaboration</p>
+        <p className="text-card-foreground mb-6 text-center text-sm font-semibold">
           Seamlessly collaborate with your team members like never before.
         </p>
-        <div className="relative w-66 h-66 flex items-center justify-center  rounded-full">
+        <div className="relative flex h-66 w-66 items-center justify-center rounded-full">
           {/* Outer circle */}
-          <div className="absolute w-66 h-66 rounded-full bg-circle-outer border border-border"></div>
+          <div className="bg-circle-outer border-border absolute h-66 w-66 rounded-full border"></div>
           {/* Inner circle */}
-          <div className="absolute w-52 h-52 rounded-full bg-circle-inner border border-border"></div>
+          <div className="bg-circle-inner border-border absolute h-52 w-52 rounded-full border"></div>
           {/* Avatar stack */}
-          <div className="relative z-10 ">
+          <div className="relative z-10">
             <AvatarStack avatars={AVATARS} size={12} />
           </div>
         </div>

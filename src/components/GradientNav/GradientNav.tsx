@@ -5,19 +5,19 @@ const NavLinks = ["Product", "Integration", "Demo", "Pricing"];
 
 const GradientNav = () => {
   return (
-    <div className="relative flex justify-center px-4 bg-background2">
+    <div className="bg-background2 relative flex justify-center px-4">
       {/* Light mode gradient */}
-      <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px] md:h-[500px] md:w-[500px] lg:h-[880px] lg:w-[880px] max-w-[100vw] max-h-screen -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.29)_0%,rgb(255_255_255/0)_100%)] pointer-events-none opacity-100 dark:opacity-0 transition-opacity" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[400px] max-h-screen w-[400px] max-w-[100vw] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.29)_0%,rgb(255_255_255/0)_100%)] opacity-100 transition-opacity md:h-[500px] md:w-[500px] lg:h-[880px] lg:w-[880px] dark:opacity-0" />
 
       {/* Dark mode gradient */}
-      <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px] md:h-[500px] md:w-[500px] lg:h-[880px] lg:w-[880px] max-w-[100vw] max-h-screen -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.36)_0%,rgb(0_0_0/0)_100%)] pointer-events-none opacity-0 dark:opacity-100 transition-opacity" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[400px] max-h-screen w-[400px] max-w-[100vw] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgb(163_220_47/0.36)_0%,rgb(0_0_0/0)_100%)] opacity-0 transition-opacity md:h-[500px] md:w-[500px] lg:h-[880px] lg:w-[880px] dark:opacity-100" />
 
-      <nav className="relative inline-flex flex-wrap justify-center items-center gap-0.5 sm:gap-1 rounded-full px-1.5 sm:px-2 py-1.5 sm:py-2 shadow-lg border border-white/60 dark:border-border bg-white/20 backdrop-blur-[65px] max-w-full">
+      <nav className="dark:border-border relative inline-flex max-w-full flex-wrap items-center justify-center gap-0.5 rounded-full border border-white/60 bg-white/20 px-1.5 py-1.5 shadow-lg backdrop-blur-[65px] sm:gap-1 sm:px-2 sm:py-2">
         {NavLinks.map((link) => (
           <NavLink
             key={link}
             href={`#${link.toLowerCase()}`}
-            className="text-[10px] xs:text-xs sm:text-sm px-2 sm:px-3"
+            className="xs:text-xs px-2 text-[10px] sm:px-3 sm:text-sm"
           >
             {link}
           </NavLink>
@@ -25,7 +25,7 @@ const GradientNav = () => {
         <Button
           variant="light"
           size="sm"
-          className="rounded-full font-medium cursor-pointer border-0 text-[10px] xs:text-xs sm:text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 h-auto"
+          className="xs:text-xs h-auto cursor-pointer rounded-full border-0 px-2.5 py-1.5 text-[10px] font-medium sm:px-4 sm:py-2 sm:text-sm"
         >
           Login
         </Button>

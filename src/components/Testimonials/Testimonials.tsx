@@ -10,21 +10,23 @@ import { useTestimonialsScroll } from "@/hooks/ui/useTestimonialsScroll";
 
 const Testimonials = () => {
   const { data: testimonials = [], isLoading, error } = useTestimonials();
-  const { scrollRef, scroll, isAtStart, isAtEnd } = useTestimonialsScroll(testimonials.length);
+  const { scrollRef, scroll, isAtStart, isAtEnd } = useTestimonialsScroll(
+    testimonials.length,
+  );
 
   if (error) throw error;
 
   return (
-    <section className="w-full bg-background2 py-12 sm:py-16">
+    <section className="bg-background2 w-full py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 text-center">
         <TestimonialsHeader />
         {isLoading ? (
           <TestimonialsSkeleton />
         ) : (
-          <div className="mt-10 relative">
+          <div className="relative mt-10">
             <div
               ref={scrollRef}
-              className="flex gap-6 overflow-x-auto scroll-smooth px-2 sm:px-0 pb-4"
+              className="flex gap-6 overflow-x-auto scroll-smooth px-2 pb-4 sm:px-0"
               style={{
                 scrollSnapType: "x mandatory",
                 scrollbarWidth: "none",
@@ -32,7 +34,11 @@ const Testimonials = () => {
               }}
             >
               {testimonials.map((t) => (
-                <div key={t.id} className="shrink-0 w-[calc(100vw-2rem)] sm:w-96" style={{ scrollSnapAlign: "start" }}>
+                <div
+                  key={t.id}
+                  className="w-[calc(100vw-2rem)] shrink-0 sm:w-96"
+                  style={{ scrollSnapAlign: "start" }}
+                >
                   <TestimonialCard {...t} />
                 </div>
               ))}
@@ -42,7 +48,7 @@ const Testimonials = () => {
               <Button
                 size="icon"
                 variant="outline"
-                className="rounded-full p-4 sm:p-6 cursor-pointer"
+                className="cursor-pointer rounded-full p-4 sm:p-6"
                 onClick={() => scroll("left")}
                 disabled={isAtStart}
                 aria-label="Scroll left"

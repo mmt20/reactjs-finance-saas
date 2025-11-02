@@ -1,4 +1,9 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/common/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/common/ui/card";
 import { useMemo, useState, lazy, Suspense } from "react";
 import { generateChartData } from "@/lib/charts/chartUtils";
 
@@ -13,17 +18,21 @@ const ChartCard = () => {
   const data = useMemo(() => generateChartData(), []);
 
   return (
-    <Card className="lg:col-span-6 p-4 rounded-lg border border-border bg-card">
-      <CardHeader className="p-0 mb-3">
-        <div className="flex justify-between items-center">
-          <CardTitle className="text-xs font-medium text-muted-foreground">Spend Overview</CardTitle>
-          <div className="flex gap-3 text-xs text-muted-foreground">
+    <Card className="border-border bg-card rounded-lg border p-4 lg:col-span-6">
+      <CardHeader className="mb-3 p-0">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-muted-foreground text-xs font-medium">
+            Spend Overview
+          </CardTitle>
+          <div className="text-muted-foreground flex gap-3 text-xs">
             {TIME_FRAMES.map((timeFrame) => (
               <button
                 key={timeFrame}
                 onClick={() => setActiveTimeFrame(timeFrame)}
                 className={`hover:text-foreground transition-colors ${
-                  activeTimeFrame === timeFrame ? "text-foreground font-medium" : ""
+                  activeTimeFrame === timeFrame
+                    ? "text-foreground font-medium"
+                    : ""
                 }`}
               >
                 {timeFrame}
@@ -33,7 +42,11 @@ const ChartCard = () => {
         </div>
       </CardHeader>
       <CardContent className="p-0">
-        <Suspense fallback={<div className="h-[200px] animate-pulse bg-muted rounded" />}>
+        <Suspense
+          fallback={
+            <div className="bg-muted h-[200px] animate-pulse rounded" />
+          }
+        >
           <SpendChart data={data} />
         </Suspense>
       </CardContent>

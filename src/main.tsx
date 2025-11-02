@@ -7,5 +7,5 @@ import { queryClient } from "./lib/react-query.ts";
 createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
     <App />
-  </QueryClientProvider>
+  </QueryClientProvider>,
 );

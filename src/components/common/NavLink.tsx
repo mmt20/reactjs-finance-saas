@@ -15,8 +15,8 @@ const NavLink = ({ href, children, className, onClick }: NavLinkProps) => {
       variant="ghost"
       size="sm"
       className={cn(
-        "px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-accent hover:text-accent-foreground",
-        className
+        "hover:bg-accent hover:text-accent-foreground rounded-full px-4 py-2 font-medium sm:px-6",
+        className,
       )}
       onClick={onClick}
     >

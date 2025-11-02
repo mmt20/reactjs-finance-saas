@@ -3,8 +3,11 @@ import { Check } from "lucide-react";
 const FeatureItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3">
-      <Check className="w-4 h-4 mt-0.5 shrink-0 text-primary-brand" aria-hidden="true" />
-      <span className="text-sm text-foreground">{text}</span>
+      <Check
+        className="text-primary-brand mt-0.5 h-4 w-4 shrink-0"
+        aria-hidden="true"
+      />
+      <span className="text-foreground text-sm">{text}</span>
     </li>
   );
 };

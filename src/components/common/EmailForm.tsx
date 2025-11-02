@@ -1,5 +1,3 @@
-"use client";
-
 import type React from "react";
 
 import { useState } from "react";
@@ -50,10 +48,10 @@ const EmailForm = ({
       onSubmit={handleSubmit}
       className={cn(
         "relative flex items-center justify-between",
-        "border border-input bg-card text-foreground",
+        "border-input bg-card text-foreground border",
         "transition-all duration-200",
         "w-full max-w-full",
-        className
+        className,
       )}
     >
       <Input
@@ -62,14 +60,14 @@ const EmailForm = ({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className={cn(
-          "flex-1 h-full px-3 sm:px-4 md:px-5 border-0 bg-transparent text-foreground",
+          "text-foreground h-full flex-1 border-0 bg-transparent px-3 sm:px-4 md:px-5",
           "text-xs sm:text-sm md:text-base",
           "placeholder:text-muted-foreground/70 placeholder:text-xs sm:placeholder:text-sm",
           "focus:outline-none focus-visible:outline-none",
           "transition-all duration-200",
-          "disabled:opacity-50 disabled:cursor-not-allowed",
+          "disabled:cursor-not-allowed disabled:opacity-50",
           "min-w-0",
-          inputClass
+          inputClass,
         )}
         required
         aria-label="Email address"
@@ -80,12 +78,12 @@ const EmailForm = ({
         type="submit"
         className={cn(
           "cursor-pointer transition-all duration-200",
-          "disabled:opacity-60 disabled:cursor-not-allowed",
+          "disabled:cursor-not-allowed disabled:opacity-60",
           "text-xs sm:text-sm md:text-base",
           "px-3 sm:px-4 md:px-6",
           "py-2 sm:py-2.5 md:py-3",
-          "whitespace-nowrap shrink-0",
-          buttonClass
+          "shrink-0 whitespace-nowrap",
+          buttonClass,
         )}
         aria-label={buttonText}
       >

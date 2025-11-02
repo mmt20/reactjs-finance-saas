@@ -4,15 +4,16 @@ import AmountSummary from "./AmountSummary";
 
 export default function AccountingCard() {
   return (
-    <Card className="pb-0 md:pb-6 rounded-3xl border border-border bg-card2 shadow-sm max-w-full sm:max-w-4xl mx-auto overflow-hidden">
+    <Card className="border-border bg-card2 mx-auto max-w-full overflow-hidden rounded-3xl border pb-0 shadow-sm sm:max-w-4xl md:pb-6">
       <CardContent className="relative">
         <div className="mb-6 sm:mb-10">
-          <h2 className="text-xl sm:text-2xl font-bold text-card-foreground mb-3 sm:mb-4">
+          <h2 className="text-card-foreground mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">
             Real-time accounting at your fingertips.
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
-            Take the pain out of book keeping! Wave goodbye to mountains of paperwork and endless email reminders.
-            There’s now a new way of accounting.
+          <p className="text-muted-foreground max-w-2xl text-sm leading-relaxed sm:text-base">
+            Take the pain out of book keeping! Wave goodbye to mountains of
+            paperwork and endless email reminders. There’s now a new way of
+            accounting.
           </p>
         </div>
 

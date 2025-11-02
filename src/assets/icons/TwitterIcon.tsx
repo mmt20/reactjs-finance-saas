@@ -2,7 +2,11 @@ interface TwitterIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const TwitterIcon = ({ color = "var(--primary)", className, ...props }: TwitterIconProps) => (
+const TwitterIcon = ({
+  color = "var(--primary)",
+  className,
+  ...props
+}: TwitterIconProps) => (
   <svg
     width="24"
     height="24"

@@ -1,13 +1,18 @@
 import { useRef, useState, useEffect } from "react";
 
-export function useTestimonialsScroll(itemCount: number, cardWidth = 384, cardGap = 24) {
+export function useTestimonialsScroll(
+  itemCount: number,
+  cardWidth = 384,
+  cardGap = 24,
+) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollPos, setScrollPos] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    const amount = dir === "left" ? -(cardWidth + cardGap) : cardWidth + cardGap;
+    const amount =
+      dir === "left" ? -(cardWidth + cardGap) : cardWidth + cardGap;
     scrollRef.current.scrollBy({ left: amount, behavior: "smooth" });
   };
 

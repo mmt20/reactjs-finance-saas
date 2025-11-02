@@ -1,4 +1,11 @@
-import { ResponsiveContainer, Area, AreaChart, Line, XAxis, YAxis } from "recharts";
+import {
+  ResponsiveContainer,
+  Area,
+  AreaChart,
+  Line,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { CHART_COLORS, CHART_GRADIENTS } from "@/lib/charts/chartConfig";
 
 interface SpendChartProps {
@@ -10,9 +17,20 @@ const SpendChart = ({ data }: SpendChartProps) => {
     <ResponsiveContainer width="100%" height={200}>
       <AreaChart data={data}>
         <defs>
-          <linearGradient id={CHART_GRADIENTS.green.id} x1="0" y1="0" x2="0" y2="1">
+          <linearGradient
+            id={CHART_GRADIENTS.green.id}
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1"
+          >
             {CHART_GRADIENTS.green.stops.map((stop) => (
-              <stop key={stop.offset} offset={stop.offset} stopColor={stop.color} stopOpacity={stop.opacity} />
+              <stop
+                key={stop.offset}
+                offset={stop.offset}
+                stopColor={stop.color}
+                stopOpacity={stop.opacity}
+              />
             ))}
           </linearGradient>
         </defs>
@@ -30,7 +48,12 @@ const SpendChart = ({ data }: SpendChartProps) => {
           tickLine={false}
           domain={[1000, 7000]}
         />
-        <Area type="monotone" dataKey="value" stroke="none" fill={`url(#${CHART_GRADIENTS.green.id})`} />
+        <Area
+          type="monotone"
+          dataKey="value"
+          stroke="none"
+          fill={`url(#${CHART_GRADIENTS.green.id})`}
+        />
         <Line
           type="monotone"
           dataKey="value"

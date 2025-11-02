@@ -7,17 +7,17 @@ const CTACard = () => {
   };
 
   return (
-    <Card className="bg-card2 rounded-2xl p-8 shadow-sm border border-border flex flex-col justify-between">
+    <Card className="bg-card2 border-border flex flex-col justify-between rounded-2xl border p-8 shadow-sm">
       <div>
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-card-foreground mb-6 leading-tight">
+        <h2 className="text-card-foreground mb-6 text-2xl leading-tight font-bold sm:text-3xl md:text-5xl">
           Optimise expense Management as a team
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-          Bring harmony to team expenses with budget limits and real-time monitoring. Freedom for your staff. Peace of
-          mind for you.
+        <p className="text-muted-foreground max-w-2xl text-sm leading-relaxed sm:text-base md:text-lg">
+          Bring harmony to team expenses with budget limits and real-time
+          monitoring. Freedom for your staff. Peace of mind for you.
         </p>
       </div>
-      <Button onClick={handleExploreMore} className="w-fit text-secondary p-6">
+      <Button onClick={handleExploreMore} className="text-secondary w-fit p-6">
         Explore more
       </Button>
     </Card>

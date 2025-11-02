@@ -2,7 +2,11 @@ interface InstagramIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const InstagramIcon = ({ color = "var(--primary)", className, ...props }: InstagramIconProps) => (
+const InstagramIcon = ({
+  color = "var(--primary)",
+  className,
+  ...props
+}: InstagramIconProps) => (
   <svg
     width="24"
     height="24"

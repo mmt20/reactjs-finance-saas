@@ -2,7 +2,11 @@ interface GithubIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const GithubIcon = ({ color = "var(--primary)", className, ...props }: GithubIconProps) => (
+const GithubIcon = ({
+  color = "var(--primary)",
+  className,
+  ...props
+}: GithubIconProps) => (
   <svg
     width="24"
     height="24"
@@ -19,7 +23,13 @@ const GithubIcon = ({ color = "var(--primary)", className, ...props }: GithubIco
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M9 18c-4.51 2-5-2-7-2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M9 18c-4.51 2-5-2-7-2"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 

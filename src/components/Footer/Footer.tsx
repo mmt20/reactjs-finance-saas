@@ -21,10 +21,30 @@ const helpLinks = [
 ];
 
 const socialLinks = [
-  { href: "#", Icon: TwitterIcon, hoverColor: "hover:bg-[#1DA1F2]", label: "Twitter" },
-  { href: "#", Icon: FacebookIcon, hoverColor: "hover:bg-[#1877F2]", label: "Facebook" },
-  { href: "#", Icon: InstagramIcon, hoverColor: "hover:bg-[#E4405F]", label: "Instagram" },
-  { href: "#", Icon: GithubIcon, hoverColor: "hover:bg-[#333]", label: "Github" },
+  {
+    href: "#",
+    Icon: TwitterIcon,
+    hoverColor: "hover:bg-[#1DA1F2]",
+    label: "Twitter",
+  },
+  {
+    href: "#",
+    Icon: FacebookIcon,
+    hoverColor: "hover:bg-[#1877F2]",
+    label: "Facebook",
+  },
+  {
+    href: "#",
+    Icon: InstagramIcon,
+    hoverColor: "hover:bg-[#E4405F]",
+    label: "Instagram",
+  },
+  {
+    href: "#",
+    Icon: GithubIcon,
+    hoverColor: "hover:bg-[#333]",
+    label: "Github",
+  },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -35,22 +55,31 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t  w-full dark:bg-card2 bg-[#E0E0E0] border-border mt-12">
+    <footer className="dark:bg-card2 border-border mt-12 w-full border-t bg-[#E0E0E0]">
       <div className="flex justify-center">
         <div className="w-full max-w-7xl px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+          <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
             {/* Brand */}
-            <div className="lg:col-span-1 space-y-4">
+            <div className="space-y-4 lg:col-span-1">
               <div className="flex items-center gap-2">
                 <LogoIcon className="shrink-0" />
-                <span className="font-bold text-base sm:text-lg whitespace-nowrap">FinBiz</span>
+                <span className="text-base font-bold whitespace-nowrap sm:text-lg">
+                  FinBiz
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Upgrade your finances with our smart and new-generation business.
+              <p className="text-muted-foreground text-sm">
+                Upgrade your finances with our smart and new-generation
+                business.
               </p>
               <div className="flex gap-3">
                 {socialLinks.map(({ href, Icon, hoverColor, label }, i) => (
-                  <SocialLink key={i} href={href} Icon={Icon} label={label} hoverColor={hoverColor} />
+                  <SocialLink
+                    key={i}
+                    href={href}
+                    Icon={Icon}
+                    label={label}
+                    hoverColor={hoverColor}
+                  />
                 ))}
               </div>
             </div>
@@ -74,21 +103,23 @@ const Footer = () => {
             </FooterColumn>
 
             {/* Newsletter */}
-            <div className="lg:col-span-2 md:mx-12 ">
-              <h3 className="font-semibold mb-4 text-foreground">Subscribe to Newsletter</h3>
+            <div className="md:mx-12 lg:col-span-2">
+              <h3 className="text-foreground mb-4 font-semibold">
+                Subscribe to Newsletter
+              </h3>
               <EmailForm
                 onSubmit={handleEmailSubmit}
                 buttonVariant="accent"
                 buttonText="Join"
                 placeholder="Enter email address"
-                className="h-12 rounded-lg w-full max-w-sm overflow-hidden"
+                className="h-12 w-full max-w-sm overflow-hidden rounded-lg"
                 buttonClass="rounded-l-none rounded-r-lg w-40 font-medium"
                 inputClass="placeholder:text-muted-foreground/60"
               />
             </div>
           </div>
 
-          <div className="pt-8 border-t text-center text-sm text-muted-foreground">
+          <div className="text-muted-foreground border-t pt-8 text-center text-sm">
             <p>© Copyright {currentYear}, All Rights Reserved by FinBiz</p>
           </div>
         </div>

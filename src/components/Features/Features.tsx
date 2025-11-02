@@ -6,17 +6,17 @@ import GraphCard from "./GraphCard";
 
 const Features = () => {
   return (
-    <section className="py-20 px-4  relative z-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative z-10 px-4 py-20">
+      <div className="mx-auto max-w-7xl">
         {/* Top 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 justify-items-center md:justify-items-start">
+        <div className="mb-6 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-4 md:justify-items-start">
           <AnalyticsCard />
           <GraphCard />
           <CollaborationCard />
         </div>
 
         {/* Bottom 2 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center md:justify-items-start">
+        <div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 md:justify-items-start">
           <AccountingCard />
           <CTACard />
         </div>

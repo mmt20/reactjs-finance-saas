@@ -2,7 +2,11 @@ interface FacebookIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const FacebookIcon = ({ color = "var(--primary)", className, ...props }: FacebookIconProps) => (
+const FacebookIcon = ({
+  color = "var(--primary)",
+  className,
+  ...props
+}: FacebookIconProps) => (
   <svg
     width="24"
     height="24"

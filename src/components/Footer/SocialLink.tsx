@@ -9,9 +9,9 @@ const SocialLink = ({ href, Icon, hoverColor, label }: ISocialLinkProps) => (
   <a
     href={href}
     aria-label={label}
-    className={`w-9 h-9 rounded-full bg-secondary transition-colors flex items-center justify-center hover:text-white ${hoverColor}`}
+    className={`bg-secondary flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:text-white ${hoverColor}`}
   >
-    <Icon className="w-5 h-5" />
+    <Icon className="h-5 w-5" />
   </a>
 );
 

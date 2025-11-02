@@ -23,10 +23,15 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(
-    error: Error & { response?: { status?: number }; status?: number; statusCode?: number }
+    error: Error & {
+      response?: { status?: number };
+      status?: number;
+      statusCode?: number;
+    },
   ) {
     // Extract status code from error, fallback to 500
-    const statusCode = error?.response?.status || error?.status || error?.statusCode || 500;
+    const statusCode =
+      error?.response?.status || error?.status || error?.statusCode || 500;
 
     // If error has a custom message, use it; otherwise map status code
     const messages: Record<number, string> = {
@@ -39,7 +44,8 @@ class ErrorBoundary extends Component<Props, State> {
       503: "Service Unavailable",
     };
 
-    const message = error.message || messages[statusCode] || "Something went wrong";
+    const message =
+      error.message || messages[statusCode] || "Something went wrong";
 
     return { hasError: true, statusCode, message };
   }
@@ -49,7 +55,11 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   handleReset = () => {
-    this.setState({ hasError: false, statusCode: 500, message: "Something went wrong" });
+    this.setState({
+      hasError: false,
+      statusCode: 500,
+      message: "Something went wrong",
+    });
   };
 
   handleReload = () => {
@@ -63,29 +73,48 @@ class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen items-center justify-center bg-background px-4">
-          <div className="rounded-lg border border-border bg-card p-8 md:p-12 text-center max-w-lg w-full">
+        <div className="bg-background flex min-h-screen items-center justify-center px-4">
+          <div className="border-border bg-card w-full max-w-lg rounded-lg border p-8 text-center md:p-12">
             {/* Status Code */}
-            <h1 className="text-8xl font-bold text-destructive/20 mb-4">{this.state.statusCode}</h1>
+            <h1 className="text-destructive/20 mb-4 text-8xl font-bold">
+              {this.state.statusCode}
+            </h1>
 
             {/* Icon */}
-            <div className="flex justify-center mb-6">
-              <div className="bg-destructive/10 rounded-full p-4 border border-destructive/20">
-                <AlertTriangle className="h-10 w-10 text-destructive" strokeWidth={2} />
+            <div className="mb-6 flex justify-center">
+              <div className="bg-destructive/10 border-destructive/20 rounded-full border p-4">
+                <AlertTriangle
+                  className="text-destructive h-10 w-10"
+                  strokeWidth={2}
+                />
               </div>
             </div>
 
             {/* Message */}
-            <h2 className="text-2xl font-bold mb-3 text-foreground">{this.state.message}</h2>
-            <p className="text-muted-foreground text-sm mb-8">Please try again or go back to the home page.</p>
+            <h2 className="text-foreground mb-3 text-2xl font-bold">
+              {this.state.message}
+            </h2>
+            <p className="text-muted-foreground mb-8 text-sm">
+              Please try again or go back to the home page.
+            </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center ">
-              <Button onClick={this.handleReset} variant="accent" size="lg" className="cursor-pointer">
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
+              <Button
+                onClick={this.handleReset}
+                variant="accent"
+                size="lg"
+                className="cursor-pointer"
+              >
                 <RefreshCw className="h-4 w-4" />
                 Try Again
               </Button>
-              <Button onClick={this.handleGoHome} variant="light" size="lg" className="cursor-pointer">
+              <Button
+                onClick={this.handleGoHome}
+                variant="light"
+                size="lg"
+                className="cursor-pointer"
+              >
                 <Home className="h-4 w-4" />
                 Go Home
               </Button>

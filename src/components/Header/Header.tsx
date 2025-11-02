@@ -11,17 +11,19 @@ const Header = () => {
   const navItems = ["Product", "Pages", "Integrations", "Blog", "Pricing"];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto max-w-full md:max-w-7xl">
+    <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+      <div className="mx-auto w-full max-w-full px-4 sm:px-6 md:max-w-7xl lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Left: Logo */}
-          <div className="flex items-center gap-2 shrink-0">
-            <LogoIcon className="shrink-0 w-8 h-8" />
-            <span className="font-bold text-base sm:text-lg whitespace-nowrap">FinBiz</span>
+          <div className="flex shrink-0 items-center gap-2">
+            <LogoIcon className="h-8 w-8 shrink-0" />
+            <span className="text-base font-bold whitespace-nowrap sm:text-lg">
+              FinBiz
+            </span>
           </div>
 
           {/* Center: Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <NavLink key={item} href={`#${item.toLowerCase()}`}>
                 {item}
@@ -30,40 +32,52 @@ const Header = () => {
           </nav>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex shrink-0 items-center gap-2">
             <Button
               variant="ghost"
               size="icon-sm"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="cursor-pointer shrink-0 relative"
+              className="relative shrink-0 cursor-pointer"
             >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Button className="sm:inline-flex text-xs sm:text-sm" variant="raised-light" size="sm">
+            <Button
+              className="text-xs sm:inline-flex sm:text-sm"
+              variant="raised-light"
+              size="sm"
+            >
               Get Started
             </Button>
 
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
-              className="md:hidden shrink-0"
+              className="shrink-0 md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
               size="icon-sm"
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden flex flex-col gap-2 pb-4 border-t pt-4">
+          <nav className="flex flex-col gap-2 border-t pt-4 pb-4 md:hidden">
             {navItems.map((item) => (
-              <NavLink key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)}>
+              <NavLink
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {item}
               </NavLink>
             ))}
