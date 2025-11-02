@@ -5,25 +5,25 @@ import type { ITestimonial } from "@/types";
 
 export default function TestimonialCard({ name, avatar, rating, text }: ITestimonial) {
   return (
-    <Card className="relative shrink-0 rounded-3xl border bg-card p-6 transition-all w-[384px] h-[260px] ">
+    <Card className="relative shrink-0 rounded-3xl border bg-card p-4 sm:p-6 transition-all w-full h-[220px] sm:h-[260px] ">
       <div className="flex flex-col h-full justify-between">
-        <p className="text-base leading-relaxed text-foreground">“{text}”</p>
+        <p className="text-sm sm:text-base leading-relaxed text-foreground">“{text}”</p>
 
         <div className="flex items-center justify-between mt-6">
           <div className="flex items-center gap-3">
-            <Avatar className="h-12 w-12 border border-background rounded-full">
+            <Avatar className="h-10 w-10 sm:h-12 sm:w-12 border border-background rounded-full">
               <AvatarImage src={avatar} alt={`avatar of ${name}`} />
               <AvatarFallback className="bg-muted text-sm font-medium text-foreground">
                 {name.slice(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="text-sm font-semibold text-foreground">{name}</h3>
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground">{name}</h3>
               <div className="mt-1 flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-3.5 w-3.5 ${
+                    className={`h-3 w-3 sm:h-3.5 sm:w-3.5 ${
                       i < rating
                         ? "fill-yellow-500 text-yellow-500"
                         : "fill-muted-foreground/20 text-muted-foreground/20"
@@ -34,7 +34,7 @@ export default function TestimonialCard({ name, avatar, rating, text }: ITestimo
             </div>
           </div>
 
-          <Quote className="h-10 w-10 fill-accent  text-muted-foreground/20" />
+          <Quote className="h-8 w-8 sm:h-10 sm:w-10 fill-accent text-muted-foreground/20" />
         </div>
       </div>
     </Card>

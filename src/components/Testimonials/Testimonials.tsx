@@ -15,7 +15,7 @@ const Testimonials = () => {
   if (error) throw error;
 
   return (
-    <section className="w-full bg-background2 py-16">
+    <section className="w-full bg-background2 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 text-center">
         <TestimonialsHeader />
         {isLoading ? (
@@ -42,7 +42,7 @@ const Testimonials = () => {
               <Button
                 size="icon"
                 variant="outline"
-                className="rounded-full p-6 cursor-pointer"
+                className="rounded-full p-4 sm:p-6 cursor-pointer"
                 onClick={() => scroll("left")}
                 disabled={isAtStart}
                 aria-label="Scroll left"
@@ -52,7 +52,7 @@ const Testimonials = () => {
               <Button
                 size="icon"
                 variant="accent"
-                className="cursor-pointer p-6"
+                className="cursor-pointer p-4 sm:p-6"
                 onClick={() => scroll("right")}
                 disabled={isAtEnd}
                 aria-label="Scroll right"
