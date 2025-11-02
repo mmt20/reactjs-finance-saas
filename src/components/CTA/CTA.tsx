@@ -40,6 +40,7 @@ export default function CTA() {
                     alt="Person viewing financial planning boards"
                     className="h-full w-full max-w-full rounded-2xl object-cover"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
