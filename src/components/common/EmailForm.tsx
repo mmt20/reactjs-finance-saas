@@ -60,6 +60,7 @@ const EmailForm = ({
           "flex-1 px-3 sm:px-4 md:px-5",
           "text-xs sm:text-sm md:text-base",
           "placeholder:text-muted-foreground/70 placeholder:text-xs sm:placeholder:text-sm",
+          "focus:outline-none focus-visible:outline-none",
           inputClass,
         )}
         required
