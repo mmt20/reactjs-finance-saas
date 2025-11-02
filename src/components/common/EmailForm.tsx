@@ -1,6 +1,4 @@
-import type React from "react";
-
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
@@ -37,7 +35,7 @@ const EmailForm = ({
 }: EmailFormProps) => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit(email);
     setEmail("");
@@ -49,7 +47,6 @@ const EmailForm = ({
       className={cn(
         "relative flex items-center justify-between",
         "border-input bg-card text-foreground border",
-        "transition-all duration-200",
         "w-full max-w-full",
         className,
       )}
@@ -60,13 +57,9 @@ const EmailForm = ({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className={cn(
-          "text-foreground h-full flex-1 border-0 bg-transparent px-3 sm:px-4 md:px-5",
+          "flex-1 px-3 sm:px-4 md:px-5",
           "text-xs sm:text-sm md:text-base",
           "placeholder:text-muted-foreground/70 placeholder:text-xs sm:placeholder:text-sm",
-          "focus:outline-none focus-visible:outline-none",
-          "transition-all duration-200",
-          "disabled:cursor-not-allowed disabled:opacity-50",
-          "min-w-0",
           inputClass,
         )}
         required
@@ -76,15 +69,7 @@ const EmailForm = ({
         variant={buttonVariant}
         size="lg"
         type="submit"
-        className={cn(
-          "cursor-pointer transition-all duration-200",
-          "disabled:cursor-not-allowed disabled:opacity-60",
-          "text-xs sm:text-sm md:text-base",
-          "px-3 sm:px-4 md:px-6",
-          "py-2 sm:py-2.5 md:py-3",
-          "shrink-0 whitespace-nowrap",
-          buttonClass,
-        )}
+        className={cn("text-xs sm:text-sm md:text-base", buttonClass)}
         aria-label={buttonText}
       >
         {buttonText}
