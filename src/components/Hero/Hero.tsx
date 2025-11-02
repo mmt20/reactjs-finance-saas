@@ -1,7 +1,7 @@
-import avatarOneImage from "@/assets/avatar-images/avatar-1.jpg";
-import avatarTwoImage from "@/assets/avatar-images/avatar-2.jpg";
-import avatarThreeImage from "@/assets/avatar-images/avatar-3.jpg";
-import avatarFourImage from "@/assets/avatar-images/avatar-4.jpg";
+import avatarOneImage from "@/assets/avatar-images/avatar-1.avif";
+import avatarTwoImage from "@/assets/avatar-images/avatar-2.avif";
+import avatarThreeImage from "@/assets/avatar-images/avatar-3.avif";
+import avatarFourImage from "@/assets/avatar-images/avatar-4.avif";
 
 import AvatarStack from "../common/AvatarStack";
 import { ArrowRight } from "lucide-react";

@@ -4,7 +4,7 @@ import ErrorBoundary from "@components/common/ErrorBoundary";
 import Header from "@components/Header/Header";
 import Hero from "@components/Hero";
 import SectionFallback from "@/components/common/SectionFallback";
-import GradientNav from "./components/GradientNav/GradientNav";
+import GradientNav from "@components/GradientNav/GradientNav";
 
 const Features = lazy(() => import("@components/Features"));
 const Dashboard = lazy(() => import("@components/Dashboard"));
