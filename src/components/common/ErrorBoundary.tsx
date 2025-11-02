@@ -25,10 +25,10 @@ class ErrorBoundary extends Component<Props, State> {
   static getDerivedStateFromError(
     error: Error & { response?: { status?: number }; status?: number; statusCode?: number }
   ) {
-    // Extract status code from error
+    // Extract status code from error, fallback to 500
     const statusCode = error?.response?.status || error?.status || error?.statusCode || 500;
 
-    // Get user-friendly message
+    // If error has a custom message, use it; otherwise map status code
     const messages: Record<number, string> = {
       400: "Bad Request",
       401: "Unauthorized",
@@ -39,7 +39,7 @@ class ErrorBoundary extends Component<Props, State> {
       503: "Service Unavailable",
     };
 
-    const message = messages[statusCode] || "Something went wrong";
+    const message = error.message || messages[statusCode] || "Something went wrong";
 
     return { hasError: true, statusCode, message };
   }
@@ -80,12 +80,12 @@ class ErrorBoundary extends Component<Props, State> {
             <p className="text-muted-foreground text-sm mb-8">Please try again or go back to the home page.</p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button onClick={this.handleReset} variant="accent" size="lg">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center ">
+              <Button onClick={this.handleReset} variant="accent" size="lg" className="cursor-pointer">
                 <RefreshCw className="h-4 w-4" />
                 Try Again
               </Button>
-              <Button onClick={this.handleGoHome} variant="light" size="lg">
+              <Button onClick={this.handleGoHome} variant="light" size="lg" className="cursor-pointer">
                 <Home className="h-4 w-4" />
                 Go Home
               </Button>
