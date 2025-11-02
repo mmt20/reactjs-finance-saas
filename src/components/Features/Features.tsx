@@ -9,14 +9,14 @@ const Features = () => {
     <section className="py-20 px-4  relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Top 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6  ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 justify-items-center md:justify-items-start">
           <AnalyticsCard />
           <GraphCard />
           <CollaborationCard />
         </div>
 
         {/* Bottom 2 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center md:justify-items-start">
           <AccountingCard />
           <CTACard />
         </div>
