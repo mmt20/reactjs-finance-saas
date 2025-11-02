@@ -15,6 +15,10 @@ A polished, production-minded finance SaaS landing page built with React 19, Vit
 - Live demo: [Live Demo](https://reactjs-finance-saas.vercel.app)
 - Design source: — [Figma File](https://www.figma.com/design/SKLhZXkR26pi9VzR8R8hKC/SaaS-Landing-Page---Bento-UI--Community---Copy-?node-id=0-1&p=f&t=gSFFUiYg6hD5O8nA-0)
 
+## ⚡ Lighthouse Performance
+
+<a href="https://ibb.co/hxtMHxWY"><img src="https://i.ibb.co/9mCv2mTZ/Screenshot-2025-11-02-193301.jpg" alt="Screenshot-2025-11-02-193301" border="0"></a>
+
 ## 📑 Table of Contents
 
 - [What you’ll find](#what-youll-find)
