@@ -1,0 +1,14 @@
+# robots.txt for reactjs-finance-saas (Vite SPA)
+
+# Allow all crawlers to access the site
+User-agent: *
+Allow: /
+
+# Optional: Disallow sensitive areas if they exist in your deployment
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /api/
+
+# Note: Add a Sitemap directive when you have one available in production.
+# Example:
+# Sitemap: https://reactjs-finance-saas.vercel.app/
